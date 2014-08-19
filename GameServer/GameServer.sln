@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameServer", "GameServer\GameServer.vcxproj", "{679C50D4-6E39-49DF-9ADF-E9B7486AE87A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1EC00E34-E016-4EB4-BF7D-B5B7E101AE57} = {1EC00E34-E016-4EB4-BF7D-B5B7E101AE57}
+		{F82212C5-2185-4C43-AF7B-F5EC5B1A80CB} = {F82212C5-2185-4C43-AF7B-F5EC5B1A80CB}
+		{06428DF2-6F1E-4810-8925-ADC0CBC3B897} = {06428DF2-6F1E-4810-8925-ADC0CBC3B897}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sockets", "Sockets-2.3.9.9\Project.net\Sockets\Sockets.vcxproj", "{1EC00E34-E016-4EB4-BF7D-B5B7E101AE57}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MySql", "MySql\MySql.vcxproj", "{F82212C5-2185-4C43-AF7B-F5EC5B1A80CB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{06428DF2-6F1E-4810-8925-ADC0CBC3B897} = {06428DF2-6F1E-4810-8925-ADC0CBC3B897}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AccountServer", "AccountServer\AccountServer.vcxproj", "{1CA5BD20-DC60-43C7-94DE-50B43D7AE8FF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1EC00E34-E016-4EB4-BF7D-B5B7E101AE57} = {1EC00E34-E016-4EB4-BF7D-B5B7E101AE57}
+		{F82212C5-2185-4C43-AF7B-F5EC5B1A80CB} = {F82212C5-2185-4C43-AF7B-F5EC5B1A80CB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utilities", "Utilities\Utilities.vcxproj", "{06428DF2-6F1E-4810-8925-ADC0CBC3B897}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{AD40018A-354C-4BF2-85D1-58FF3B11FB6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{679C50D4-6E39-49DF-9ADF-E9B7486AE87A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{679C50D4-6E39-49DF-9ADF-E9B7486AE87A}.Debug|Win32.Build.0 = Debug|Win32
+		{679C50D4-6E39-49DF-9ADF-E9B7486AE87A}.Release|Win32.ActiveCfg = Release|Win32
+		{679C50D4-6E39-49DF-9ADF-E9B7486AE87A}.Release|Win32.Build.0 = Release|Win32
+		{1EC00E34-E016-4EB4-BF7D-B5B7E101AE57}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1EC00E34-E016-4EB4-BF7D-B5B7E101AE57}.Debug|Win32.Build.0 = Debug|Win32
+		{1EC00E34-E016-4EB4-BF7D-B5B7E101AE57}.Release|Win32.ActiveCfg = Release|Win32
+		{1EC00E34-E016-4EB4-BF7D-B5B7E101AE57}.Release|Win32.Build.0 = Release|Win32
+		{F82212C5-2185-4C43-AF7B-F5EC5B1A80CB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F82212C5-2185-4C43-AF7B-F5EC5B1A80CB}.Debug|Win32.Build.0 = Debug|Win32
+		{F82212C5-2185-4C43-AF7B-F5EC5B1A80CB}.Release|Win32.ActiveCfg = Release|Win32
+		{F82212C5-2185-4C43-AF7B-F5EC5B1A80CB}.Release|Win32.Build.0 = Release|Win32
+		{1CA5BD20-DC60-43C7-94DE-50B43D7AE8FF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1CA5BD20-DC60-43C7-94DE-50B43D7AE8FF}.Debug|Win32.Build.0 = Debug|Win32
+		{1CA5BD20-DC60-43C7-94DE-50B43D7AE8FF}.Release|Win32.ActiveCfg = Release|Win32
+		{1CA5BD20-DC60-43C7-94DE-50B43D7AE8FF}.Release|Win32.Build.0 = Release|Win32
+		{06428DF2-6F1E-4810-8925-ADC0CBC3B897}.Debug|Win32.ActiveCfg = Debug|Win32
+		{06428DF2-6F1E-4810-8925-ADC0CBC3B897}.Debug|Win32.Build.0 = Debug|Win32
+		{06428DF2-6F1E-4810-8925-ADC0CBC3B897}.Release|Win32.ActiveCfg = Release|Win32
+		{06428DF2-6F1E-4810-8925-ADC0CBC3B897}.Release|Win32.Build.0 = Release|Win32
+		{AD40018A-354C-4BF2-85D1-58FF3B11FB6C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AD40018A-354C-4BF2-85D1-58FF3B11FB6C}.Debug|Win32.Build.0 = Debug|Win32
+		{AD40018A-354C-4BF2-85D1-58FF3B11FB6C}.Release|Win32.ActiveCfg = Release|Win32
+		{AD40018A-354C-4BF2-85D1-58FF3B11FB6C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

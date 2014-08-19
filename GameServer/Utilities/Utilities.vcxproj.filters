@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Convert.cpp" />
+    <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="INIReader.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Timer\Timer.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer\TimerManager.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="StringTool.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Convert.h" />
+    <ClInclude Include="Debug.h" />
+    <ClInclude Include="File.h" />
+    <ClInclude Include="INIReader.h" />
+    <ClInclude Include="Timer\Timer.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer\TimerManager.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="StringTool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{5c5715be-f586-435f-b7e3-056f9ec09dde}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
