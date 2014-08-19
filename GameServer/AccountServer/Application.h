@@ -4,6 +4,7 @@
 #include <memory>
 #include "SocketHandler.h"
 #include "Connection.h"
+#include "Command.h"
 using namespace MySql;
 
 class Application
@@ -18,7 +19,7 @@ public:
 
 	bool Run();
 
-	std::shared_ptr<Connection> GetDbConn();
+	std::shared_ptr<Command> CreateCommand();
 
 private:
 	unsigned short m_port;

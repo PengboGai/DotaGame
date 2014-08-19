@@ -1,21 +1,18 @@
 #include <iostream>
-
-#include "Convert.h"
-#include "Debug.h"
-#include "File.h"
-#include "INIReader.h"
-#include "StringTool.h"
-using namespace Utilities;
+#include "ClientSocket.h"
 
 int main()
 {
-	std::string s = Utilities::Convert::ToString(1231);
-	std::cout << s.c_str() << std::endl;
-
-	Debug::EchoInfo("sdfsdfsdfs");
-
-	// Debug::Log("");
-
+	SocketHandler h;
+	ClientSocket* s = new ClientSocket(h);
+	s->SetDeleteByHandler();
+	s->Open("localhost", 6220);
+	h.Add(s);
+	h.Select(1, 0);
+	while (h.GetCount()) {
+		h.Select(0, 300 * 1000);
+	}
 	getchar();
+
 	return 0;
 }

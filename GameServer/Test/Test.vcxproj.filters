@@ -2,5 +2,29 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Msg\AccountMsg.cpp">
+      <Filter>Msg</Filter>
+    </ClCompile>
+    <ClCompile Include="Msg\BaseMsg.cpp">
+      <Filter>Msg</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientSocket.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Msg">
+      <UniqueIdentifier>{2df11632-30ea-42f8-a098-fc7e487411e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Msg\AccountMsg.h">
+      <Filter>Msg</Filter>
+    </ClInclude>
+    <ClInclude Include="Msg\BaseMsg.h">
+      <Filter>Msg</Filter>
+    </ClInclude>
+    <ClInclude Include="Msg\MsgType.h">
+      <Filter>Msg</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientSocket.h" />
   </ItemGroup>
 </Project>

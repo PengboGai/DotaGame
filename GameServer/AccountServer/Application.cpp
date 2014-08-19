@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "ListenSocket.h"
 #include "LoginRequest.h"
+#include "ConnectionBuilder.h"
 
 Application* Application::s_instance = nullptr;
 
@@ -13,6 +14,8 @@ Application::Application(unsigned short port)
 Application::~Application()
 {
 	s_instance = nullptr;
+
+	m_conn->Close();
 }
 
 bool Application::Run()
@@ -29,19 +32,22 @@ bool Application::Run()
 	return true;
 }
 
-std::shared_ptr<Connection> Application::GetDbConn()
+std::shared_ptr<Command> Application::CreateCommand()
 {
 	if (m_conn == nullptr) {
-		std::string conn_str = "HostName=localhost;DataBase=test2;Port=3306;User=root;Pwd=23285155xbb";
+		ConnectionBuilder builder;
+		builder.SetDbName("test2");
+		std::string conn_str = builder.GetConnectionString();
 		m_conn = std::shared_ptr<Connection>(new Connection(conn_str));
-		if (m_conn && m_conn->Open()) {
-			return m_conn;
-		}
-
 		if (m_conn) {
-			m_conn.reset();
+			if (!m_conn->Open()) {
+				m_conn.reset();
+			}
 		}
-		return nullptr;
 	}
-	return m_conn;
+
+	if (m_conn) {
+		return m_conn->CreateCommand();
+	}
+	return nullptr;
 }
