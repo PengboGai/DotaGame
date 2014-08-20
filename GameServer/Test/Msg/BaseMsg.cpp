@@ -2,54 +2,54 @@
 
 BaseMsg::BaseMsg()
 {
-	memset(&_msg, 0, sizeof(SOCKET_MSG));
-	_msg.len = sizeof(_msg.len) + sizeof(_msg.type);
+	memset(m_buffer, 0, sizeof(m_buffer));
+	m_head = (MSG_HEAD*)m_buffer;
 }
 
 BaseMsg::~BaseMsg()
 {
 }
 
-void BaseMsg::getBuffer(char* buffer, unsigned short len)
+unsigned short BaseMsg::GetLen()
 {
-	memset(buffer, 0, len);
-	memcpy(buffer, (void*)&_msg, _msg.len);
+	return m_head->len;
 }
 
-char* BaseMsg::getBuffer(unsigned short len)
+void BaseMsg::SetLen(unsigned short len)
 {
-	char* buffer = new char[len];
-	getBuffer(buffer, len);
-	return buffer;
+	if (m_head) {
+		m_head->len = len;
+	}
 }
 
-void BaseMsg::setBuffer(const char* buffer, unsigned short len)
+unsigned short BaseMsg::GetType()
 {
-	memset(&_msg, 0, sizeof(_msg));
-	memcpy(&_msg, buffer, len);
+	return m_head->type;
 }
 
-unsigned short BaseMsg::getLen()
+void BaseMsg::SetType(unsigned short type)
 {
-	return _msg.len;
+	if (m_head) {
+		m_head->type = type;
+	}
 }
 
-void BaseMsg::setLen(unsigned short len)
+const char* BaseMsg::GetBuffer()
 {
-	_msg.len = len + sizeof(_msg.len) + sizeof(_msg.type);
+	return m_buffer;
 }
 
-unsigned short BaseMsg::getType()
+MSG_HEAD* BaseMsg::GetHead()
 {
-	return _msg.type;
+	return m_head;
 }
 
-void BaseMsg::setType(unsigned short type)
+bool BaseMsg::SetBuffer(const char* buf, unsigned int len)
 {
-	_msg.type = type;
-}
-
-const char* BaseMsg::getData()
-{
-	return _msg.data;
+	if (buf == nullptr || len < 4 || len > MSG_MAX_SIZE) {
+		return false;
+	}
+	memset(m_buffer, 0, sizeof(m_buffer));
+	memcpy(m_buffer, buf, len);
+	return true;
 }

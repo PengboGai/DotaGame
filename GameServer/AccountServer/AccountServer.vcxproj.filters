@@ -9,12 +9,19 @@
     <ClCompile Include="Msg\BaseMsg.cpp">
       <Filter>Msg</Filter>
     </ClCompile>
-    <ClCompile Include="Response.cpp" />
-    <ClCompile Include="LoginResponse.cpp" />
+    <ClCompile Include="Response\LoginResponse.cpp">
+      <Filter>Response</Filter>
+    </ClCompile>
+    <ClCompile Include="Response\Response.cpp">
+      <Filter>Response</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Msg">
       <UniqueIdentifier>{235caef1-4904-4cb3-aeb3-94265542ebc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Response">
+      <UniqueIdentifier>{9a3f06b9-5740-45cb-b90f-a6617ad27e26}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,7 +35,11 @@
     <ClInclude Include="Msg\MsgType.h">
       <Filter>Msg</Filter>
     </ClInclude>
-    <ClInclude Include="Response.h" />
-    <ClInclude Include="LoginResponse.h" />
+    <ClInclude Include="Response\LoginResponse.h">
+      <Filter>Response</Filter>
+    </ClInclude>
+    <ClInclude Include="Response\Response.h">
+      <Filter>Response</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,7 +2,6 @@
 #define _RESPONSE_H_
 
 #include "TcpSocket.h"
-#include "BaseMsg.h"
 
 class Response : public TcpSocket
 {

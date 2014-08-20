@@ -1,16 +1,5 @@
 #include "Response.h"
-#include "MsgType.h"
-#include "AccountMsg.h"
-#include "Application.h"
-#include "Connection.h"
-#include "Command.h"
-#include "DataReader.h"
-#include "DataTable.h"
-#include "DataRow.h"
-#include "Debug.h"
-#include "StringTool.h"
-
-using namespace Utilities;
+#include "BaseMsg.h"
 
 Response::Response(ISocketHandler& h)
 : TcpSocket(h)

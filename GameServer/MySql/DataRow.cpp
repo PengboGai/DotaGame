@@ -43,6 +43,21 @@ DataRow::~DataRow()
 	m_row.clear();
 }
 
+void DataRow::AddNullItem()
+{
+	m_row.push_back(nullptr);
+}
+
+void DataRow::AddItem(const std::shared_ptr<DataItem>& item)
+{
+	for (auto& data : m_row) {
+		if (data.get() == item.get()) {
+			return;
+		}
+	}
+	m_row.push_back(item);
+}
+
 std::shared_ptr<DataItem> DataRow::GetItem(uint32_t col_index)
 {
 	if (col_index >= m_row.size()) {
@@ -71,19 +86,58 @@ std::shared_ptr<DataItem> DataRow::GetItemBySel(SELECTOR selector)
 	return nullptr;
 }
 
-void DataRow::AddNullItem()
+int64_t DataRow::GetIntItem(uint32_t col_index)
 {
-	m_row.push_back(nullptr);
+	std::shared_ptr<DataItem> item = GetItem(col_index);
+	if (item) {
+		return item->ToInt64();
+	}
+	return 0;
 }
 
-void DataRow::AddItem(const std::shared_ptr<DataItem>& item)
+int64_t DataRow::GetIntItem(const std::string& title)
 {
-	for (auto& data : m_row) {
-		if (data.get() == item.get()) {
-			return;
-		}
+	std::shared_ptr<DataItem> item = GetItem(title);
+	if (item) {
+		return item->ToInt64();
 	}
-	m_row.push_back(item);
+	return 0;
+}
+
+double DataRow::GetDoubleItem(uint32_t col_index)
+{
+	std::shared_ptr<DataItem> item = GetItem(col_index);
+	if (item) {
+		return item->ToDouble();
+	}
+	return 0.0;
+}
+
+double DataRow::GetDoubleItem(const std::string& title)
+{
+	std::shared_ptr<DataItem> item = GetItem(title);
+	if (item) {
+		return item->ToDouble();
+	}
+	return 0;
+}
+
+std::string DataRow::GetStringItem(uint32_t col_index)
+{
+	std::shared_ptr<DataItem> item = GetItem(col_index);
+	if (item) {
+		return item->ToString();
+	}
+	return "";
+}
+
+std::string DataRow::GetStringItem(const std::string& title)
+{
+	std::shared_ptr<DataItem> item = GetItem(title);
+	if (item) {
+		return item->ToString();
+	}
+	return "";
 }
 
 void DataRow::SetIntItem(const std::string& title, int64_t data)

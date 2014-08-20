@@ -84,6 +84,42 @@ public:
 	MSG_INFO* m_info;
 };
 
+//////////////////////////////////////////////////////////////////////////
+// 分服列表消息
+class SMsgServerList : public BaseMsg
+{
+public:
+	enum ServerStatus
+	{
+		SS_NEW,		// 新服
+		SS_GOOD,	// 良好
+		SS_HOT,		// 火爆
+	};
+
+public:
+	SMsgServerList();
+	~SMsgServerList();
+
+	void AddServer(char name[20], ServerStatus status, char ip[16], unsigned short port);
+
+public:
+	struct SERVER_INFO
+	{
+		char name[20];			// 分服名称
+		char ip[16];			// IP地址
+		unsigned char status;	// 状态
+		unsigned short port;	// 端口号
+	};
+
+	struct MSG_INFO : MSG_HEAD
+	{
+		unsigned char end;		// 是否最后一条消息
+		unsigned short count;	// 列表数量
+		SERVER_INFO servers[1];	// 分服列表
+	};
+	MSG_INFO* m_info;
+};
+
 #pragma pack(pop)
 
 #endif // _ACCOUNT_MESSAGE_H_

@@ -5,16 +5,13 @@
 
 #pragma pack(push, 1)
 
-#define CREATE_DATA_IN_FUNC(__ST_TYPE__) \
-	__ST_TYPE__* getDataIn() { return (__ST_TYPE__*)getData(); }
+#define MSG_MAX_SIZE		2 * 1024
+#define MSG_HEAD_SIZE		sizeof(MSG_HEAD)
 
-#define MSG_MAX_SIZE					1024
-
-struct SOCKET_MSG
+struct MSG_HEAD
 {
 	unsigned short len;
 	unsigned short type;
-	char data[MSG_MAX_SIZE];
 };
 
 class BaseMsg
@@ -23,21 +20,19 @@ public:
 	BaseMsg();
 	virtual ~BaseMsg();
 
-	void getBuffer(char* buffer, unsigned short len);
-	char* getBuffer(unsigned short len);
-	void setBuffer(const char* buffer, unsigned short len);
+	unsigned short GetLen();
+	void SetLen(unsigned short len);
 
-	unsigned short getLen();
-	void setLen(unsigned short len);
+	unsigned short GetType();
+	void SetType(unsigned short type);
 
-	unsigned short getType();
-	void setType(unsigned short type);
+	MSG_HEAD* GetHead();
+	const char* GetBuffer();
+	bool SetBuffer(const char* buf, unsigned int len);
 
-protected:
-	const char* getData();
-
-protected:
-	struct SOCKET_MSG _msg;
+private:
+	MSG_HEAD* m_head;
+	char m_buffer[MSG_MAX_SIZE];
 };
 
 #pragma pack(pop)

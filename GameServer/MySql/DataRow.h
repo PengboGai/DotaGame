@@ -27,12 +27,21 @@ public:
 	DataRow(const std::shared_ptr<FieldRow>& field_row, MYSQL_ROW row, uint32_t cols);
 	~DataRow();
 
+	void AddNullItem();
+	void AddItem(const std::shared_ptr<DataItem>& item);
+
 	std::shared_ptr<DataItem> GetItem(uint32_t col_index);
 	std::shared_ptr<DataItem> GetItem(const std::string& field_name);
 	std::shared_ptr<DataItem> GetItemBySel(SELECTOR selector);
 
-	void AddNullItem();
-	void AddItem(const std::shared_ptr<DataItem>& item);
+	int64_t GetIntItem(uint32_t col_index);
+	int64_t GetIntItem(const std::string& title);
+
+	double GetDoubleItem(uint32_t col_index);
+	double GetDoubleItem(const std::string& title);
+
+	std::string GetStringItem(uint32_t col_index);
+	std::string GetStringItem(const std::string& title);
 
 	void SetIntItem(const std::string& title, int64_t data);
 	void SetIntItem(uint32_t col_index, int64_t data);

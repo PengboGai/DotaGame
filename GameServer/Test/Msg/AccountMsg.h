@@ -8,28 +8,17 @@
 class CMsgAccountLogin : public BaseMsg
 {
 public:
-	struct SM_DATA_IN
+	CMsgAccountLogin();
+	~CMsgAccountLogin();
+
+public:
+	struct MSG_INFO : MSG_HEAD
 	{
 		char name[20];
 		char pwd[20];
 		char ip[16];
 	};
-
-public:
-	CMsgAccountLogin();
-	~CMsgAccountLogin();
-
-	const char* getUserName();
-	void setUserName(const char* name, unsigned int len);
-
-	const char* getUserPwd();
-	void setUserPwd(const char* pwd, unsigned int len);
-
-	const char* getUserIP();
-	void setUserIP(const char* ip, unsigned int len);
-
-protected:
-	CREATE_DATA_IN_FUNC(SM_DATA_IN);
+	MSG_INFO* m_info;
 };
 
 //////////////////////////////////////////////////////////////////////////
@@ -43,52 +32,33 @@ public:
 	} LoginResult;
 
 public:
-	struct SM_DATA_IN
-	{
-		unsigned char result;
-	};
-
-public:
 	SMsgAccountLogin();
 	~SMsgAccountLogin();
 
-	void setResult(LoginResult result);
-	LoginResult getResult();
-
-protected:
-	CREATE_DATA_IN_FUNC(SM_DATA_IN);
+public:
+	struct MSG_INFO : MSG_HEAD
+	{
+		unsigned char result;
+	};
+	MSG_INFO* m_info;
 };
 
 //////////////////////////////////////////////////////////////////////////
 class CMsgAccountReg : public BaseMsg
 {
 public:
-	struct SM_DATA_IN
+	CMsgAccountReg();
+	~CMsgAccountReg();
+
+public:
+	struct MSG_INFO : MSG_HEAD
 	{
 		char name[20];
 		char pwd[20];
 		char pwd2[20];
 		char ip[16];
 	};
-
-public:
-	CMsgAccountReg();
-	~CMsgAccountReg();
-
-	const char* getUserName();
-	void setUserName(const char* name, unsigned int len);
-
-	const char* getUserPwd();
-	void setUserPwd(const char* pwd, unsigned int len);
-
-	const char* getUserConfirmPwd();
-	void setUserConfirmPwd(const char* pwd, unsigned int len);
-
-	const char* getUserIP();
-	void setUserIP(const char* ip, unsigned int len);
-
-protected:
-	CREATE_DATA_IN_FUNC(SM_DATA_IN);
+	MSG_INFO* m_info;
 };
 
 //////////////////////////////////////////////////////////////////////////
@@ -103,20 +73,49 @@ public:
 	} RegResult;
 
 public:
-	struct SM_DATA_IN
-	{
-		unsigned char result;
-	};
-
-public:
 	SMsgAccountReg();
 	~SMsgAccountReg();
 
-	void setResult(RegResult result);
-	RegResult getResult();
+public:
+	struct MSG_INFO : MSG_HEAD
+	{
+		unsigned char result;
+	};
+	MSG_INFO* m_info;
+};
 
-protected:
-	CREATE_DATA_IN_FUNC(SM_DATA_IN);
+//////////////////////////////////////////////////////////////////////////
+// 分服列表消息
+class SMsgServerList : public BaseMsg
+{
+public:
+	enum ServerStatus
+	{
+		SS_NEW,		// 新服
+		SS_GOOD,	// 良好
+		SS_HOT,		// 火爆
+	};
+
+public:
+	SMsgServerList();
+	~SMsgServerList();
+
+public:
+	struct SERVER_INFO
+	{
+		char name[20];			// 分服名称
+		char ip[16];			// IP地址
+		unsigned char status;	// 状态
+		unsigned short port;	// 端口号
+	};
+
+	struct MSG_INFO : MSG_HEAD
+	{
+		unsigned char end;		// 是否最后一条消息
+		unsigned short count;	// 列表数量
+		SERVER_INFO servers[1];	// 分服列表
+	};
+	MSG_INFO* m_info;
 };
 
 #pragma pack(pop)
