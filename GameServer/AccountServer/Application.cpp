@@ -1,6 +1,6 @@
 #include "Application.h"
 #include "ListenSocket.h"
-#include "LoginRequest.h"
+#include "LoginResponse.h"
 #include "ConnectionBuilder.h"
 
 Application* Application::s_instance = nullptr;
@@ -20,7 +20,7 @@ Application::~Application()
 
 bool Application::Run()
 {
-	ListenSocket<LoginRequest> listener(m_handler);
+	ListenSocket<LoginResponse> listener(m_handler);
 	if (listener.Bind(6220)) {
 		return false;
 	}

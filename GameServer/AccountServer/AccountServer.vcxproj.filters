@@ -9,7 +9,8 @@
     <ClCompile Include="Msg\BaseMsg.cpp">
       <Filter>Msg</Filter>
     </ClCompile>
-    <ClCompile Include="LoginRequest.cpp" />
+    <ClCompile Include="Response.cpp" />
+    <ClCompile Include="LoginResponse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Msg">
@@ -27,6 +28,7 @@
     <ClInclude Include="Msg\MsgType.h">
       <Filter>Msg</Filter>
     </ClInclude>
-    <ClInclude Include="LoginRequest.h" />
+    <ClInclude Include="Response.h" />
+    <ClInclude Include="LoginResponse.h" />
   </ItemGroup>
 </Project>

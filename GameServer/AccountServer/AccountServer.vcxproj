@@ -82,17 +82,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="LoginRequest.cpp" />
+    <ClCompile Include="LoginResponse.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Msg\AccountMsg.cpp" />
     <ClCompile Include="Msg\BaseMsg.cpp" />
+    <ClCompile Include="Response.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="LoginRequest.h" />
+    <ClInclude Include="LoginResponse.h" />
     <ClInclude Include="Msg\AccountMsg.h" />
     <ClInclude Include="Msg\BaseMsg.h" />
     <ClInclude Include="Msg\MsgType.h" />
+    <ClInclude Include="Response.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
