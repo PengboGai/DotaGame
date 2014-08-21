@@ -6,21 +6,21 @@
 
 class Application
 {
-	typedef SocketHandler RequestHandler;
+    typedef SocketHandler RequestHandler;
 
 public:
-	Application(unsigned short port);
-	~Application();
+    Application(unsigned short port);
+    ~Application();
 
-	static Application* GetInstance() { return s_instance; }
+    static Application* GetInstance() { return s_instance; }
 
-	bool Run();
+    bool Run();
 
 private:
-	unsigned short m_port;
-	RequestHandler m_handler;
+    unsigned short m_port;
+    RequestHandler m_handler;
 
-	static Application* s_instance;
+    static Application* s_instance;
 };
 
 #endif // _APPLICATION_H_

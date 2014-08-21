@@ -8,8 +8,8 @@ int main()
 	// AccountServer操作账号数据库，该库只有一张Account表
 	//========================================================================
 
-	Application app(6220);
-	app.Run();
+    Application app(6220);
+    app.Run();
 
 	return 0;
 }

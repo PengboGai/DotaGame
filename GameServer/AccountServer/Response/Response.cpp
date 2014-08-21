@@ -17,13 +17,13 @@ Response::~Response()
 
 void Response::OnRead()
 {
-	TcpSocket::OnRead();
+    TcpSocket::OnRead();
 
-	const char* buf = ibuf.GetStart();
-	if (buf) {
-		OnMessage(buf);
-		ibuf.Remove(((MSG_HEAD*)buf)->len);
-	}
+    const char* buf = ibuf.GetStart();
+    if (buf) {
+        OnMessage(buf);
+        ibuf.Remove(((MSG_HEAD*)buf)->len);
+    }
 }
 
 void Response::OnMessage(const char* msg)

@@ -9,24 +9,24 @@ using namespace MySql;
 
 class Application
 {
-	typedef SocketHandler RequestHandler;
+    typedef SocketHandler RequestHandler;
 
 public:
-	Application(unsigned short port);
-	~Application();
+    Application(unsigned short port);
+    ~Application();
 
-	static Application* GetInstance() { return s_instance; }
+    static Application* GetInstance() { return s_instance; }
 
-	bool Run();
+    bool Run();
 
-	std::shared_ptr<Command> CreateCommand();
+    std::shared_ptr<Command> CreateCommand();
 
 private:
-	unsigned short m_port;
-	RequestHandler m_handler;
-	std::shared_ptr<Connection> m_conn;
+    unsigned short m_port;
+    RequestHandler m_handler;
+    std::shared_ptr<Connection> m_conn;
 
-	static Application* s_instance;
+    static Application* s_instance;
 };
 
 #endif // _APPLICATION_H_
