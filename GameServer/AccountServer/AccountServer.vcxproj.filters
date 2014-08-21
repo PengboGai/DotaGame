@@ -32,14 +32,14 @@
     <ClInclude Include="Msg\BaseMsg.h">
       <Filter>Msg</Filter>
     </ClInclude>
-    <ClInclude Include="Msg\MsgType.h">
-      <Filter>Msg</Filter>
-    </ClInclude>
     <ClInclude Include="Response\LoginResponse.h">
       <Filter>Response</Filter>
     </ClInclude>
     <ClInclude Include="Response\Response.h">
       <Filter>Response</Filter>
+    </ClInclude>
+    <ClInclude Include="Msg\MsgType.h">
+      <Filter>Msg</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
