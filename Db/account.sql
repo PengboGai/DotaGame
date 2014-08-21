@@ -1,7 +1,8 @@
 
--- ----------------------------
--- Table structure for `account`
--- ----------------------------
+DROP DATABASE IF EXISTS dota_account;
+CREATE DATABASE dota_account;
+USE dota_account;
+
 DROP TABLE IF EXISTS `account`;
 CREATE TABLE `account` (
   `id` bigint(8) unsigned NOT NULL AUTO_INCREMENT,

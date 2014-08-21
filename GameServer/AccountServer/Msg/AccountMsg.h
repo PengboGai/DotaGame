@@ -25,11 +25,12 @@ public:
 class SMsgAccountLogin : public BaseMsg
 {
 public:
-	typedef enum {
+	enum LoginResult
+	{
 		LR_FAIL,					// 失败
 		LR_SUCCESS,					// 成功
 		LR_INVALID_USER_OR_PWD		// 用户名或密码错误
-	} LoginResult;
+	};
 
 public:
 	SMsgAccountLogin();
@@ -39,6 +40,7 @@ public:
 	struct MSG_INFO : MSG_HEAD
 	{
 		unsigned char result;
+		unsigned long long userid;
 	};
 	MSG_INFO* m_info;
 };
@@ -65,12 +67,13 @@ public:
 class SMsgAccountReg : public BaseMsg
 {
 public:
-	typedef enum {
+	enum RegResult
+	{
 		RR_FAIL,					// 失败
 		RR_SUCCESS,					// 注册成功
 		RR_EXIST_USER,				// 用户名已存在
 		RR_PWD_DIFFERENT,			// 两次密码不一样
-	} RegResult;
+	};
 
 public:
 	SMsgAccountReg();

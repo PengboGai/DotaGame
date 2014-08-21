@@ -56,6 +56,7 @@ void LoginResponse::LoginHandle(CMsgAccountLogin* msg)
 	std::string pwd = msg->m_info->pwd;
 
 	unsigned char result = 0;
+	unsigned long long userid = 0;
 	std::string query = StringTool::Format("SELECT * FROM `account` "
 		"WHERE `user_name`='%s' AND `user_pwd`='%s' LIMIT 1;", name.c_str(), pwd.c_str());
 	GetCommand()->SetCommandText(query);
@@ -67,6 +68,7 @@ void LoginResponse::LoginHandle(CMsgAccountLogin* msg)
 		row->SetIntItem("login_time", time(nullptr));
 		if (row->Update(GetCommand())) {
 			result = SMsgAccountLogin::LR_SUCCESS;
+			userid = row->GetIntItem("id");
 		}
 		else {
 			result = SMsgAccountLogin::LR_FAIL;
@@ -78,6 +80,7 @@ void LoginResponse::LoginHandle(CMsgAccountLogin* msg)
 
 	SMsgAccountLogin send_msg;
 	send_msg.m_info->result = result;
+	send_msg.m_info->userid = userid;
 	SendBuf(send_msg.GetBuffer(), send_msg.GetLen());
 
 	if (result == SMsgAccountLogin::LR_SUCCESS) {

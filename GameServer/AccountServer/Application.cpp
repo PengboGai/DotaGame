@@ -2,6 +2,7 @@
 #include "ListenSocket.h"
 #include "LoginResponse.h"
 #include "ConnectionBuilder.h"
+#include "Debug.h"
 
 Application* Application::s_instance = nullptr;
 
