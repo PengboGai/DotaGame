@@ -19,6 +19,13 @@ Application::~Application()
     m_conn->Close();
 }
 
+void Application::Init()
+{
+    auto tick = std::bind(&LoginOverTime::Tick, &m_login_overtime, std::placeholders::_1);
+    Timer* timer = new Timer(tick, 1000, Timer::REPEAT_FOREVER);
+    m_timer_mgr.AddTimer(timer);
+}
+
 bool Application::Run()
 {
     ListenSocket<LoginResponse> listener(m_handler);
@@ -28,7 +35,8 @@ bool Application::Run()
     m_handler.Add(&listener);
     m_handler.Select(1, 0);
     while (m_handler.GetCount()) {
-        m_handler.Select(0, 500 * 1000);
+        m_handler.Select(0, 100 * 1000);
+        m_timer_mgr.Tick();
     }
     return true;
 }

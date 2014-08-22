@@ -15,6 +15,9 @@
     <ClCompile Include="Response\Response.cpp">
       <Filter>Response</Filter>
     </ClCompile>
+    <ClCompile Include="Timer\LoginOverTime.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Msg">
@@ -22,6 +25,9 @@
     </Filter>
     <Filter Include="Response">
       <UniqueIdentifier>{9a3f06b9-5740-45cb-b90f-a6617ad27e26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{00f5f7ae-a6ef-4421-8b11-e40a2f065116}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +46,9 @@
     </ClInclude>
     <ClInclude Include="Msg\MsgType.h">
       <Filter>Msg</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer\LoginOverTime.h">
+      <Filter>Timer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

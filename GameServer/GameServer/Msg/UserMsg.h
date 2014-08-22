@@ -60,18 +60,19 @@ public:
     struct MSG_INFO : MSG_HEAD
     {
         unsigned long long userid;
-        char nick_name[20];
-        unsigned long long change_name_time;
-        unsigned int team_level;
-        unsigned int team_exp;
-        unsigned short head_id;
-        unsigned long long gold;
-        unsigned long long diamond;
-        unsigned short power;
-        unsigned long long power_time;
-        unsigned char skill_point;
-        unsigned long long skill_point_time;
-        unsigned char new_guide;
+        char nick_name[20];                     // 玩家昵称
+        unsigned long long change_name_time;    // 改名时间
+        unsigned int team_level;                // 战队等级
+        unsigned int team_exp;                  // 战队经验
+        unsigned short head_id;                 // 头像编号
+        unsigned long long gold_coin;           // 金币
+        unsigned long long gem;                 // 宝石
+        unsigned long long expedition_coin;     // 远征币
+        unsigned short power;                   // 体力
+        unsigned long long power_time;          // 体力值恢复时间
+        unsigned char skill_point;              // 技能点
+        unsigned long long skill_point_time;    // 技能点恢复时间
+        unsigned char new_guide;                // 新手引导步骤
     };
     MSG_INFO* m_info;
 };
