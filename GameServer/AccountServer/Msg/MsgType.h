@@ -7,4 +7,6 @@
 #define MSG_ACCOUNT_REG_S                       1003    // 玩家注册（服务端->客户端）
 #define MSG_SERVER_LIST_S                       1004    // 分服列表（服务端->客户端）
 
+#define SYS_MSG_USER_HAS_LOGINED                9000    // 玩家是否登入（游戏分服->账号服务器）
+
 #endif // _MESSAGE_TYPE_H_

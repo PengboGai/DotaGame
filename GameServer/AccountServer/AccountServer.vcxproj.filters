@@ -18,6 +18,33 @@
     <ClCompile Include="Timer\LoginOverTime.cpp">
       <Filter>Timer</Filter>
     </ClCompile>
+    <ClCompile Include="Base\Entry.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Action.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Action\Action1000.cpp">
+      <Filter>Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Action\Action1002.cpp">
+      <Filter>Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Action\Action9000.cpp">
+      <Filter>Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Context\Context.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
+    <ClCompile Include="Context\GameServers.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
+    <ClCompile Include="Entry\PlayerEntry.cpp">
+      <Filter>Entry</Filter>
+    </ClCompile>
+    <ClCompile Include="Context\PlayerActionFactory.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Msg">
@@ -28,6 +55,18 @@
     </Filter>
     <Filter Include="Timer">
       <UniqueIdentifier>{00f5f7ae-a6ef-4421-8b11-e40a2f065116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{38ea994c-2fa3-4cd1-b4c4-49fcce2390a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Action">
+      <UniqueIdentifier>{8dfd851f-61f2-4165-8f12-85d3d8fa569a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Context">
+      <UniqueIdentifier>{b2fa3f71-09bc-4816-bf89-0e77611ab310}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entry">
+      <UniqueIdentifier>{ee5f1c16-605a-4042-aed9-86982cca4035}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +88,36 @@
     </ClInclude>
     <ClInclude Include="Timer\LoginOverTime.h">
       <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Entry.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Action.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\IActionFactory.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Action\Action1000.h">
+      <Filter>Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Action\Action1002.h">
+      <Filter>Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Action\Action9000.h">
+      <Filter>Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Context\Context.h">
+      <Filter>Context</Filter>
+    </ClInclude>
+    <ClInclude Include="Context\GameServers.h">
+      <Filter>Context</Filter>
+    </ClInclude>
+    <ClInclude Include="Entry\PlayerEntry.h">
+      <Filter>Entry</Filter>
+    </ClInclude>
+    <ClInclude Include="Context\PlayerActionFactory.h">
+      <Filter>Context</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

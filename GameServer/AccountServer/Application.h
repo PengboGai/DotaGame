@@ -25,7 +25,7 @@ public:
     void Init();
     bool Run();
 
-    const TimerManager& GetTimerManager() { return m_timer_mgr; }
+    TimerManager& GetTimerManager() { return m_timer_mgr; }
 
     std::shared_ptr<Command> CreateCommand();
 
