@@ -2,6 +2,7 @@
 #include "Entry.h"
 #include "BaseMsg.h"
 #include "Application.h"
+#include "Context.h"
 
 Action::Action(Entry& entry)
 : m_entry(entry)
@@ -16,6 +17,11 @@ Action::~Action()
 void Action::Send(BaseMsg* msg)
 {
     m_entry.SendBuf(msg->GetBuffer(), msg->GetLen());
+}
+
+Context* Action::GetContext()
+{
+    return Context::GetInstance();
 }
 
 TimerManager& Action::GetTimerManager()

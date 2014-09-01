@@ -90,7 +90,9 @@
     <ClCompile Include="Context\PlayerActionFactory.cpp" />
     <ClCompile Include="Context\Context.cpp" />
     <ClCompile Include="Context\GameServers.cpp" />
+    <ClCompile Include="Context\ServerActionFactory.cpp" />
     <ClCompile Include="Entry\PlayerEntry.cpp" />
+    <ClCompile Include="Entry\ServerEntry.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Msg\AccountMsg.cpp" />
     <ClCompile Include="Msg\BaseMsg.cpp" />
@@ -109,7 +111,9 @@
     <ClInclude Include="Context\PlayerActionFactory.h" />
     <ClInclude Include="Context\Context.h" />
     <ClInclude Include="Context\GameServers.h" />
+    <ClInclude Include="Context\ServerActionFactory.h" />
     <ClInclude Include="Entry\PlayerEntry.h" />
+    <ClInclude Include="Entry\ServerEntry.h" />
     <ClInclude Include="Msg\AccountMsg.h" />
     <ClInclude Include="Msg\BaseMsg.h" />
     <ClInclude Include="Msg\MsgType.h" />

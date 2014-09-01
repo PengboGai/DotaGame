@@ -45,6 +45,12 @@
     <ClCompile Include="Context\PlayerActionFactory.cpp">
       <Filter>Context</Filter>
     </ClCompile>
+    <ClCompile Include="Entry\ServerEntry.cpp">
+      <Filter>Entry</Filter>
+    </ClCompile>
+    <ClCompile Include="Context\ServerActionFactory.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Msg">
@@ -117,6 +123,12 @@
       <Filter>Entry</Filter>
     </ClInclude>
     <ClInclude Include="Context\PlayerActionFactory.h">
+      <Filter>Context</Filter>
+    </ClInclude>
+    <ClInclude Include="Entry\ServerEntry.h">
+      <Filter>Entry</Filter>
+    </ClInclude>
+    <ClInclude Include="Context\ServerActionFactory.h">
       <Filter>Context</Filter>
     </ClInclude>
   </ItemGroup>

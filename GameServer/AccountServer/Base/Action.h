@@ -15,6 +15,7 @@ using namespace MySql;
 using namespace Utilities;
 
 class Entry;
+class Context;
 
 class Action
 {
@@ -28,6 +29,7 @@ public:
 protected:
     void Send(BaseMsg* msg);
 
+    Context* GetContext();
     TimerManager& GetTimerManager();
     std::shared_ptr<Command> GetCommand();
 

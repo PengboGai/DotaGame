@@ -2,6 +2,8 @@
 #include "AccountMsg.h"
 #include "StringTool.h"
 #include "Entry.h"
+#include "GameServers.h"
+#include "Context.h"
 
 // 一个包所允许存储的最大分服数
 const static int MAX_SERVER_SIZE = 20;
@@ -58,21 +60,21 @@ void Action1000::onMessage(MSG_HEAD* head)
 
 void Action1000::SendServerList()
 {
-    //std::shared_ptr<SMsgServerList> send_msg(new SMsgServerList());
-    //const std::vector<ServerList::Item*>& list = m_entry.GetServerList();
-    //for (unsigned int i = 0; i < list.size(); ++i) {
-    //    ServerList::Item* item = list[i];
-    //    if (send_msg->m_info->count >= MAX_SERVER_SIZE) {
-    //        if ((i + 1) == list.size()) {
-    //            send_msg->m_info->end = 1;
-    //        }
-    //        Send(send_msg.get());
-    //        send_msg.reset(new SMsgServerList());
-    //    }
-    //    send_msg->AddServer(item->name, SMsgServerList::SS_GOOD, item->ip, item->port);
-    //}
-    //if (send_msg->m_info->count > 0) {
-    //    send_msg->m_info->end = 1;
-    //    Send(send_msg.get());
-    //}
+    std::shared_ptr<SMsgServerList> send_msg(new SMsgServerList());
+    const std::vector<GameServers::Item*>& list = GetContext()->GetGameServers()->GetList();
+    for (unsigned int i = 0; i < list.size(); ++i) {
+        GameServers::Item* item = list[i];
+        if (send_msg->m_info->count >= MAX_SERVER_SIZE) {
+            if ((i + 1) == list.size()) {
+                send_msg->m_info->end = 1;
+            }
+            Send(send_msg.get());
+            send_msg.reset(new SMsgServerList());
+        }
+        send_msg->AddServer(item->name, SMsgServerList::SS_GOOD, item->ip, item->port);
+    }
+    if (send_msg->m_info->count > 0) {
+        send_msg->m_info->end = 1;
+        Send(send_msg.get());
+    }
 }
