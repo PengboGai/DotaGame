@@ -51,6 +51,9 @@
     <ClCompile Include="Context\ServerActionFactory.cpp">
       <Filter>Context</Filter>
     </ClCompile>
+    <ClCompile Include="Context\OnlineOvertime.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Msg">
@@ -129,6 +132,9 @@
       <Filter>Entry</Filter>
     </ClInclude>
     <ClInclude Include="Context\ServerActionFactory.h">
+      <Filter>Context</Filter>
+    </ClInclude>
+    <ClInclude Include="Context\OnlineOvertime.h">
       <Filter>Context</Filter>
     </ClInclude>
   </ItemGroup>

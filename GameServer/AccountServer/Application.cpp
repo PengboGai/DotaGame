@@ -21,6 +21,7 @@ Application::~Application()
 
 void Application::Init()
 {
+    // OnlineOvertime;
     auto tick = std::bind(&LoginOverTime::Tick, &m_login_overtime, std::placeholders::_1);
     Timer* timer = new Timer(tick, 1000, Timer::REPEAT_FOREVER);
     m_timer_mgr.AddTimer(timer);
