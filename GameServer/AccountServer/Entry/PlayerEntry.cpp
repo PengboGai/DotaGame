@@ -1,5 +1,5 @@
 #include "PlayerEntry.h"
-#include "PlayerActionFactory.h"
+#include "ActionFactory.h"
 #include "Context.h"
 
 PlayerEntry::PlayerEntry(ISocketHandler& h)
@@ -18,5 +18,5 @@ PlayerEntry::~PlayerEntry()
 
 std::shared_ptr<IActionFactory> PlayerEntry::GetActionFactory()
 {
-    return Context::GetInstance()->GetPlayerActionFactory();
+    return Context::GetInstance()->GetActionFactory();
 }

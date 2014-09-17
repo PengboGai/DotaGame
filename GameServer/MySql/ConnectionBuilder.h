@@ -6,6 +6,10 @@
 namespace MySql
 {
 
+#ifdef SetPort
+#undef SetPort
+#endif
+
 class ConnectionBuilder
 {
 public:

@@ -1,5 +1,5 @@
-#ifndef _ENTRY_H_
-#define _ENTRY_H_
+#ifndef _BASE_ENTRY_H_
+#define _BASE_ENTRY_H_
 
 #include "TcpSocket.h"
 
@@ -18,4 +18,4 @@ protected:
     virtual std::shared_ptr<IActionFactory> GetActionFactory() = 0;
 };
 
-#endif // _ENTRY_H_
+#endif // _BASE_ENTRY_H_

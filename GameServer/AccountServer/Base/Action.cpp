@@ -32,7 +32,7 @@ TimerManager& Action::GetTimerManager()
 std::shared_ptr<Command> Action::GetCommand()
 {
     if (m_cmd == nullptr) {
-        m_cmd = Application::GetInstance()->CreateCommand();
+        m_cmd = Application::GetInstance()->GetConnection()->CreateCommand();
     }
     return m_cmd;
 }

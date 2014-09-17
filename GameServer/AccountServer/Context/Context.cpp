@@ -1,12 +1,18 @@
 #include "Context.h"
 #include "GameServers.h"
-#include "PlayerActionFactory.h"
-#include "ServerActionFactory.h"
+#include "ActionFactory.h"
+#include "OnlineOvertime.h"
+#include "TimerManager.h"
+#include "Timer.h"
+#include "Application.h"
+
+using namespace Utilities;
+
+const static int kOnlineTimerInterval = 1000;
 
 Context::Context()
 : m_servers(new GameServers())
-, m_factory(new PlayerActionFactory())
-, m_server_factory(new ServerActionFactory())
+, m_factory(new ActionFactory())
 {
 }
 
@@ -25,12 +31,19 @@ std::shared_ptr<GameServers> Context::GetGameServers()
     return m_servers;
 }
 
-std::shared_ptr<PlayerActionFactory> Context::GetPlayerActionFactory()
+std::shared_ptr<ActionFactory> Context::GetActionFactory()
 {
     return m_factory;
 }
 
-std::shared_ptr<ServerActionFactory> Context::GetServerActionFactory()
+std::shared_ptr<OnlineOvertime> Context::GetOnlineOvertime()
 {
-    return m_server_factory;
+    if (m_online == nullptr) {
+        m_online = std::shared_ptr<OnlineOvertime>(new OnlineOvertime());
+
+        auto tick = std::bind(&OnlineOvertime::Tick, m_online.get(), std::placeholders::_1);
+        Timer* timer = new Timer(tick, kOnlineTimerInterval, Timer::REPEAT_FOREVER);
+        Application::GetInstance()->GetTimerManager().AddTimer(timer);
+    }
+    return m_online;
 }

@@ -64,19 +64,21 @@ void ClientSocket::OnConnect()
 {
 	TcpSocket::OnConnect();
 
-	std::string name = "chenzhen";
-	std::string pwd = "23285155xbb";
-	std::string pwd2 = "23285155xbb";
+	std::string name = "www";
+	std::string pwd = "123456";
+	std::string pwd2 = "123456";
 	std::string ip = "192.168.1.101";
 
+#if 0
 	CMsgAccountLogin login;
 	memcpy(login.m_info->name, name.c_str(), name.size());
 	memcpy(login.m_info->pwd, pwd.c_str(), pwd.size());
 	memcpy(login.m_info->ip, ip.c_str(), ip.size());
 
 	SendBuf(login.GetBuffer(), login.GetLen());
+#endif
 
-#if 0
+#if 1
 	CMsgAccountReg reg;
 	memcpy(reg.m_info->name, name.c_str(), name.size());
 	memcpy(reg.m_info->pwd, pwd.c_str(), pwd.size());

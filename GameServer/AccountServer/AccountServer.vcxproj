@@ -87,19 +87,15 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Base\Action.cpp" />
     <ClCompile Include="Base\Entry.cpp" />
+    <ClCompile Include="Base\Handler.cpp" />
     <ClCompile Include="Context\OnlineOvertime.cpp" />
-    <ClCompile Include="Context\PlayerActionFactory.cpp" />
+    <ClCompile Include="Context\ActionFactory.cpp" />
     <ClCompile Include="Context\Context.cpp" />
     <ClCompile Include="Context\GameServers.cpp" />
-    <ClCompile Include="Context\ServerActionFactory.cpp" />
     <ClCompile Include="Entry\PlayerEntry.cpp" />
-    <ClCompile Include="Entry\ServerEntry.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Msg\AccountMsg.cpp" />
     <ClCompile Include="Msg\BaseMsg.cpp" />
-    <ClCompile Include="Response\LoginResponse.cpp" />
-    <ClCompile Include="Response\Response.cpp" />
-    <ClCompile Include="Timer\LoginOverTime.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action\Action1000.h" />
@@ -108,20 +104,16 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="Base\Action.h" />
     <ClInclude Include="Base\Entry.h" />
+    <ClInclude Include="Base\Handler.h" />
     <ClInclude Include="Base\IActionFactory.h" />
     <ClInclude Include="Context\OnlineOvertime.h" />
-    <ClInclude Include="Context\PlayerActionFactory.h" />
+    <ClInclude Include="Context\ActionFactory.h" />
     <ClInclude Include="Context\Context.h" />
     <ClInclude Include="Context\GameServers.h" />
-    <ClInclude Include="Context\ServerActionFactory.h" />
     <ClInclude Include="Entry\PlayerEntry.h" />
-    <ClInclude Include="Entry\ServerEntry.h" />
     <ClInclude Include="Msg\AccountMsg.h" />
     <ClInclude Include="Msg\BaseMsg.h" />
     <ClInclude Include="Msg\MsgType.h" />
-    <ClInclude Include="Response\LoginResponse.h" />
-    <ClInclude Include="Response\Response.h" />
-    <ClInclude Include="Timer\LoginOverTime.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

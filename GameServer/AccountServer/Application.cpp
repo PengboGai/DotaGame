@@ -1,13 +1,11 @@
 #include "Application.h"
 #include "ListenSocket.h"
-#include "LoginResponse.h"
 #include "ConnectionBuilder.h"
-#include "Debug.h"
+#include "PlayerEntry.h"
 
 Application* Application::s_instance = nullptr;
 
-Application::Application(unsigned short port)
-: m_port(port)
+Application::Application()
 {
     s_instance = this;
 }
@@ -16,20 +14,19 @@ Application::~Application()
 {
     s_instance = nullptr;
 
-    m_conn->Close();
+    if (m_conn) {
+        m_conn->Close();
+    }
 }
 
 void Application::Init()
 {
-    // OnlineOvertime;
-    auto tick = std::bind(&LoginOverTime::Tick, &m_login_overtime, std::placeholders::_1);
-    Timer* timer = new Timer(tick, 1000, Timer::REPEAT_FOREVER);
-    m_timer_mgr.AddTimer(timer);
+    InitDb();
 }
 
 bool Application::Run()
 {
-    ListenSocket<LoginResponse> listener(m_handler);
+    ListenSocket<PlayerEntry> listener(m_handler);
     if (listener.Bind(6220)) {
         return false;
     }
@@ -42,22 +39,21 @@ bool Application::Run()
     return true;
 }
 
-std::shared_ptr<Command> Application::CreateCommand()
+void Application::InitDb()
 {
     if (m_conn == nullptr) {
         ConnectionBuilder builder;
+        builder.SetHostName("localhost");
         builder.SetDbName("test2");
-        std::string conn_str = builder.GetConnectionString();
-        m_conn = std::shared_ptr<Connection>(new Connection(conn_str));
+        builder.SetPort(3306);
+        builder.SetUser("root");
+        builder.SetPwd("root");
+
+        m_conn = std::shared_ptr<Connection>(new Connection(builder.GetConnectionString()));
         if (m_conn) {
             if (!m_conn->Open()) {
                 m_conn.reset();
             }
         }
     }
-
-    if (m_conn) {
-        return m_conn->CreateCommand();
-    }
-    return nullptr;
 }

@@ -4,8 +4,8 @@
 #include <memory>
 
 class GameServers;
-class PlayerActionFactory;
-class ServerActionFactory;
+class ActionFactory;
+class OnlineOvertime;
 
 class Context
 {
@@ -16,13 +16,13 @@ public:
     static Context* GetInstance();
 
     std::shared_ptr<GameServers> GetGameServers();
-    std::shared_ptr<PlayerActionFactory> GetPlayerActionFactory();
-    std::shared_ptr<ServerActionFactory> GetServerActionFactory();
+    std::shared_ptr<ActionFactory> GetActionFactory();
+    std::shared_ptr<OnlineOvertime> GetOnlineOvertime();
 
 private:
     std::shared_ptr<GameServers> m_servers;
-    std::shared_ptr<PlayerActionFactory> m_factory;
-    std::shared_ptr<ServerActionFactory> m_server_factory;
+    std::shared_ptr<ActionFactory> m_factory;
+    std::shared_ptr<OnlineOvertime> m_online;
 };
 
 #endif // _CONTEXT_H_
