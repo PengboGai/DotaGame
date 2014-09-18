@@ -2,23 +2,35 @@
 #define _APPLICATION_H_
 
 #include <memory>
-#include "SocketHandler.h"
+#include "Connection.h"
+#include "TimerManager.h"
+#include "Handler.h"
+
+using namespace MySql;
+using namespace Utilities;
 
 class Application
 {
-    typedef SocketHandler RequestHandler;
-
 public:
-    Application(unsigned short port);
+    Application();
     ~Application();
 
+public:
     static Application* GetInstance() { return s_instance; }
 
+    void Init();
     bool Run();
 
+    TimerManager& GetTimerManager() { return m_timer_mgr; }
+    std::shared_ptr<Connection> GetConnection() { return m_conn; }
+
 private:
-    unsigned short m_port;
-    RequestHandler m_handler;
+    void InitDb();
+
+private:
+    Handler m_handler;
+    TimerManager m_timer_mgr;
+    std::shared_ptr<Connection> m_conn;
 
     static Application* s_instance;
 };

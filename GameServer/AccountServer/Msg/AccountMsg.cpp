@@ -69,3 +69,15 @@ void SMsgServerList::AddServer(char name[20], ServerStatus status, char ip[16], 
     SetLen(sizeof(MSG_INFO) + sizeof(SERVER_INFO) * m_info->count);
     ++m_info->count;
 }
+
+//////////////////////////////////////////////////////////////////////////
+CSMsgAccountHasLogined::CSMsgAccountHasLogined()
+{
+    SetType(MSG_SERVER_LIST_S);
+    m_info = (MSG_INFO*)GetBuffer();
+    SetLen(sizeof(MSG_INFO));
+}
+
+CSMsgAccountHasLogined::~CSMsgAccountHasLogined()
+{
+}

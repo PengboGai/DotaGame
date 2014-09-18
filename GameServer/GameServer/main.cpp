@@ -6,7 +6,8 @@ int main()
 	// 一个GameServer对应一个服
 	//========================================================================
 
-	Application app(6330);
+	Application app;
+    app.Init();
 	app.Run();
 
 	return 0;

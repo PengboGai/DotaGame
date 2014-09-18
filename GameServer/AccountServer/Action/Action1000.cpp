@@ -48,6 +48,8 @@ void Action1000::onMessage(MSG_HEAD* head)
         result = SMsgAccountLogin::LR_INVALID_USER_OR_PWD;
     }
 
+    Context::GetInstance()->GetOnlineOvertime()->AddUser(userid);
+
     SMsgAccountLogin send_msg;
     send_msg.m_info->result = result;
     send_msg.m_info->userid = userid;

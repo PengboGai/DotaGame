@@ -96,6 +96,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Msg\AccountMsg.cpp" />
     <ClCompile Include="Msg\BaseMsg.cpp" />
+    <ClCompile Include="Msg\SysMsg.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action\Action1000.h" />
@@ -114,6 +115,7 @@
     <ClInclude Include="Msg\AccountMsg.h" />
     <ClInclude Include="Msg\BaseMsg.h" />
     <ClInclude Include="Msg\MsgType.h" />
+    <ClInclude Include="Msg\SysMsg.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

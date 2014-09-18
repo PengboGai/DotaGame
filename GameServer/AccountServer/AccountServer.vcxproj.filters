@@ -42,6 +42,9 @@
     <ClCompile Include="Base\Handler.cpp">
       <Filter>Base</Filter>
     </ClCompile>
+    <ClCompile Include="Msg\SysMsg.cpp">
+      <Filter>Msg</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Msg">
@@ -106,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="Base\Handler.h">
       <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Msg\SysMsg.h">
+      <Filter>Msg</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

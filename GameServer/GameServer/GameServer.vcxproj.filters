@@ -9,10 +9,40 @@
       <Filter>Msg</Filter>
     </ClCompile>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Base\Action.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Entry.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Handler.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Context\ActionFactory.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
+    <ClCompile Include="Context\Context.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
+    <ClCompile Include="Entry\GameEntry.cpp">
+      <Filter>Entry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Msg">
       <UniqueIdentifier>{365fa9fd-3d6e-4f21-a6d6-cc48ad670422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{76d266a6-4197-49c0-8bb9-f3f6157898bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Action">
+      <UniqueIdentifier>{26da7f5e-c212-456f-93ef-ebc5770a457f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Context">
+      <UniqueIdentifier>{2f0171f8-4a44-4ac6-9fa6-817470fea754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entry">
+      <UniqueIdentifier>{d0128f80-513c-442c-865d-02f223004d36}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -26,5 +56,26 @@
       <Filter>Msg</Filter>
     </ClInclude>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Base\Action.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Entry.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Handler.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\IActionFactory.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Context\ActionFactory.h">
+      <Filter>Context</Filter>
+    </ClInclude>
+    <ClInclude Include="Context\Context.h">
+      <Filter>Context</Filter>
+    </ClInclude>
+    <ClInclude Include="Entry\GameEntry.h">
+      <Filter>Entry</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
