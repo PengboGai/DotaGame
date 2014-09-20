@@ -1,7 +1,7 @@
 #include "Application.h"
 #include "ListenSocket.h"
 #include "ConnectionBuilder.h"
-#include "PlayerEntry.h"
+#include "AccountEntry.h"
 
 Application* Application::s_instance = nullptr;
 
@@ -26,7 +26,7 @@ void Application::Init()
 
 bool Application::Run()
 {
-    ListenSocket<PlayerEntry> listener(m_handler);
+    ListenSocket<AccountEntry> listener(m_handler);
     if (listener.Bind(6220)) {
         return false;
     }

@@ -27,6 +27,12 @@
     <ClCompile Include="Entry\GameEntry.cpp">
       <Filter>Entry</Filter>
     </ClCompile>
+    <ClCompile Include="Action\Action1000.cpp">
+      <Filter>Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Context\AccountServer.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Msg">
@@ -76,6 +82,12 @@
     </ClInclude>
     <ClInclude Include="Entry\GameEntry.h">
       <Filter>Entry</Filter>
+    </ClInclude>
+    <ClInclude Include="Action\Action1000.h">
+      <Filter>Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Context\AccountServer.h">
+      <Filter>Context</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

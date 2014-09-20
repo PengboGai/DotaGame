@@ -81,10 +81,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Action\Action1000.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Base\Action.cpp" />
     <ClCompile Include="Base\Entry.cpp" />
     <ClCompile Include="Base\Handler.cpp" />
+    <ClCompile Include="Context\AccountServer.cpp" />
     <ClCompile Include="Context\ActionFactory.cpp" />
     <ClCompile Include="Context\Context.cpp" />
     <ClCompile Include="Entry\GameEntry.cpp" />
@@ -93,11 +95,13 @@
     <ClCompile Include="Msg\UserMsg.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Action\Action1000.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Base\Action.h" />
     <ClInclude Include="Base\Entry.h" />
     <ClInclude Include="Base\Handler.h" />
     <ClInclude Include="Base\IActionFactory.h" />
+    <ClInclude Include="Context\AccountServer.h" />
     <ClInclude Include="Context\ActionFactory.h" />
     <ClInclude Include="Context\Context.h" />
     <ClInclude Include="Entry\GameEntry.h" />

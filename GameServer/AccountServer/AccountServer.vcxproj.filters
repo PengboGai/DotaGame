@@ -30,9 +30,6 @@
     <ClCompile Include="Context\GameServers.cpp">
       <Filter>Context</Filter>
     </ClCompile>
-    <ClCompile Include="Entry\PlayerEntry.cpp">
-      <Filter>Entry</Filter>
-    </ClCompile>
     <ClCompile Include="Context\OnlineOvertime.cpp">
       <Filter>Context</Filter>
     </ClCompile>
@@ -44,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="Msg\SysMsg.cpp">
       <Filter>Msg</Filter>
+    </ClCompile>
+    <ClCompile Include="Entry\AccountEntry.cpp">
+      <Filter>Entry</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,9 +98,6 @@
     <ClInclude Include="Context\GameServers.h">
       <Filter>Context</Filter>
     </ClInclude>
-    <ClInclude Include="Entry\PlayerEntry.h">
-      <Filter>Entry</Filter>
-    </ClInclude>
     <ClInclude Include="Context\OnlineOvertime.h">
       <Filter>Context</Filter>
     </ClInclude>
@@ -112,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="Msg\SysMsg.h">
       <Filter>Msg</Filter>
+    </ClInclude>
+    <ClInclude Include="Entry\AccountEntry.h">
+      <Filter>Entry</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
